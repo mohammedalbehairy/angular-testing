@@ -1,8 +1,20 @@
+import { AuthService } from './../services/auth.service';
 import { LoginComponent } from './../login/login.component';
 
 describe('Component - Login2', () => {
 
-  class MockAuthService {
+  // class MockAuthService {
+  //   authenticated = false;
+
+  //   isAuthenticated(): boolean {
+  //     return this.authenticated;
+  //   }
+  // }
+
+  /**
+   * extend original service and override it's functions
+   */
+  class MockAuthService extends AuthService {
     authenticated = false;
 
     isAuthenticated(): boolean {
